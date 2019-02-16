@@ -1615,7 +1615,7 @@ int main(){
 	test_8();
 	test_9();
 	
-	printf("\n ------------ pass all test! ------------ \n"); 
+	printf("\n ------------ pass all tests! ------------ \n"); 
 	
 	return 0;
 }
