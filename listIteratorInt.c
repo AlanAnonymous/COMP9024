@@ -146,8 +146,8 @@ Node *newNode(int v){
   其实也就是这3种情况：
   (因为添加元素总是在cursor_prev位置，所以不需要考虑cursor_next的位置)
     1. head==NULL && cursor_prev==NULL
-	2. head!=NULL && cursor_prev!=NULL
-	3. head!=NULL && cursor_prev==NULL
+    2. head!=NULL && cursor_prev!=NULL
+    3. head!=NULL && cursor_prev==NULL
 */
 int add(IteratorInt it, int v){
 	
@@ -221,8 +221,8 @@ int add(IteratorInt it, int v){
 /*
   一共2种情况：（第一种非常特殊，第二种比较特殊，第三种是普遍情况） 
     1.  链表不存在 
-	2.1 链表中没有节点（也就是没有头节点） 
-	2.2 光标在链表的末尾 
+    2.1 链表中没有节点（也就是没有头节点） 
+    2.2 光标在链表的末尾 
 */ 
 int hasNext(IteratorInt it){
 	
@@ -257,8 +257,8 @@ int hasNext(IteratorInt it){
 /*
   这里的话，共有2种情况：
     1.  链表不存在
-	2.1 链表中没有节点（也就是没有头节点）
-	2.2 光标在链表的开头
+    2.1 链表中没有节点（也就是没有头节点）
+    2.2 光标在链表的开头
 */ 
 int hasPrevious(IteratorInt it){
 	
@@ -364,16 +364,16 @@ int *previous(IteratorInt it){
   分2种情况讨论：
     
     1. 头节点需要重置 
-      1.1  ^  head(del)  node
-      1.2  ^  head(del)
-      1.3  head(del)  ^  node
-      1.4  head(del)  ^
+    1.1  ^  head(del)  node
+    1.2  ^  head(del)
+    1.3  head(del)  ^  node
+    1.4  head(del)  ^
     
     2. 头节点不需要重置 
-	  2.1  head  node_1(del)  ^  node_2
-	  2.2  head  node_1(del)  ^
-	  2.3  head/node  ^  node_1(del)  node_2
-	  2.4  head/node  ^  node_1(del)
+    2.1  head  node_1(del)  ^  node_2
+    2.2  head  node_1(del)  ^
+    2.3  head/node  ^  node_1(del)  node_2
+    2.4  head/node  ^  node_1(del)
 */ 
 int deleteElm(IteratorInt it){
 	
@@ -663,13 +663,13 @@ void sample_test_log1(){
 	cheak_result(1, integer);
 	
 	integer = add(it, 12);
-    cheak_result(1, integer);
+	cheak_result(1, integer);
 	
 	integer = add(it, 33);
-    cheak_result(1, integer);
+	cheak_result(1, integer);
 	
 	integer = add(it, 25);
-    cheak_result(1, integer);
+	cheak_result(1, integer);
 	
 	pointer = previous(it);
 	// 因为 previous 函数中引用了 hasPrevious 这个函数，
@@ -798,26 +798,26 @@ void test_0(){
 		cheak_result(1, integer);
 		
 		// 判断hasNext的操作
-	    integer = hasNext(it);
-	    cheak_result(0, integer);
+		integer = hasNext(it);
+		cheak_result(0, integer);
 	
-	    // 判断hasPrevious的操作
-	    integer = hasPrevious(it);
-	    cheak_result(1, integer);
+		// 判断hasPrevious的操作
+		integer = hasPrevious(it);
+		cheak_result(1, integer);
 	
-	    pointer = next(it);
-	    // 这里就是单纯地判断是否为NULL
+		pointer = next(it);
+		// 这里就是单纯地判断是否为NULL
 		//////////////////////////////// 
-	    cheak_pointer(pointer);
-	    ////////////////////////////////
+		cheak_pointer(pointer);
+		////////////////////////////////
 		
 		// 判断 previous
-	    pointer = previous(it);
-	    cheak_result(test_array[i], *pointer);
+		pointer = previous(it);
+		cheak_result(test_array[i], *pointer);
 		
 		// 判断 next
-	    pointer = next(it);
-	    cheak_result(test_array[i], *pointer);
+		pointer = next(it);
+		cheak_result(test_array[i], *pointer);
 	    
 		// （向前移动又向后移动，等于没动）
 	}
