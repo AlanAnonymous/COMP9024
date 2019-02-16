@@ -1,20 +1,38 @@
-ËµÃ÷£º
-  ´úÂë´ó¸Å215ĞĞ
-  ±¸×¢´ó¸Å380ĞĞ
-  ²âÊÔ´ó¸Å1000ĞĞ
+è¯´æ˜ï¼š
+  ä»£ç å¤§æ¦‚215è¡Œ
+  å¤‡æ³¨å¤§æ¦‚380è¡Œ
+  æµ‹è¯•å¤§æ¦‚1000è¡Œï¼ˆå½“ç„¶ï¼Œæµ‹è¯•ç¨‹åºæ˜¯å¤§ä½¬ä»¬å†™çš„ï¼Œæˆ‘åªæ˜¯æ¬è¿å·¥ï¼‰
 
 
-´Ëassignment³£¼û´íÎó£º
-  1. Segmentation fault: µ±Ö¸ÕëÊÇNULLµÄÇé¿öÏÂ£¬¶ÔÆä½øĞĞ²»Ç¡µ±µÄ²Ù×÷£¬½«»á³öÏÖÕâÖÖ´íÎó£¬ËùÒÔ¼ì²éÖ¸Õë
-  2. ³ÌĞòÃ»Êä³ö£º Ò»°ã¶¼ÊÇµ±Ö¸ÕëÎªNULLµÄÇé¿öÏÂ£¬ÓÃÁË->prev£¬->next»ò->data£¬Ôò½«»á³öÏÖÕâÖÖ´íÎó
+æ­¤assignmentå¸¸è§é”™è¯¯ï¼š
+  1. Segmentation fault: å½“æŒ‡é’ˆæ˜¯NULLçš„æƒ…å†µä¸‹ï¼Œå¯¹å…¶è¿›è¡Œä¸æ°å½“çš„æ“ä½œï¼Œå°†ä¼šå‡ºç°è¿™ç§é”™è¯¯ï¼Œæ‰€ä»¥æ£€æŸ¥æŒ‡é’ˆ
+  2. ç¨‹åºæ²¡è¾“å‡ºï¼š ä¸€èˆ¬éƒ½æ˜¯å½“æŒ‡é’ˆä¸ºNULLçš„æƒ…å†µä¸‹ï¼Œç”¨äº†->prevï¼Œ->nextæˆ–->dataï¼Œåˆ™å°†ä¼šå‡ºç°è¿™ç§é”™è¯¯
 
-Ò»°ã½â¾ö·½·¨£º 
-  ¼ÓÉÏÅĞ¶ÏÖ¸ÕëÊÇ·ñÎªNULLµÄÌõ¼ş£¬Àı£º
+ä¸€èˆ¬è§£å†³æ–¹æ³•ï¼š 
+  åŠ ä¸Šåˆ¤æ–­æŒ‡é’ˆæ˜¯å¦ä¸ºNULLçš„æ¡ä»¶ï¼Œä¾‹å¦‚ï¼š
   if(pointer != NULL){
     XXXXXXX;
   }
-  »ò 
-  if(pointer){
-    XXXXXXX;
-  }
 
+
+æœ€åï¼Œè¯´æ˜ä¸€ä¸‹è¿™é‡Œä¸Šä¼ çš„ä»£ç å’Œæˆ‘æäº¤ç»™è€å¸ˆçš„æ€è·¯åšæ³•å¹¶ä¸ä¸€æ ·
+ä¸‹é¢å°±æ˜¯æˆ‘å½“æ—¶çš„åšæ³•ï¼ˆä»…åŒ…å«å¼€å¤´éƒ¨åˆ†ï¼‰
+ç¨å¾®è§£é‡Šä¸€ä¸‹ï¼š
+cursorå®šä¹‰ä¸ºå§‹ç»ˆæŒ‡å‘^çš„å‰é¢é‚£ä¸ªèŠ‚ç‚¹ï¼›
+directionä»£è¡¨æ–¹å‘ï¼Œå‘å‰å‘åæˆ–æ— æ–¹å‘ï¼Œç”¨äºdeleteElmå’Œsetå‡½æ•°
+
+
+// struct Node
+typedef struct Node {
+	struct Node *prev;	// previous of node
+	struct Node *next;	// next of node
+	int data;			      // data, value
+} Node;
+
+// struct IteratorIntRep
+typedef struct IteratorIntRep {
+	// 'Node' is a name which has already been defined
+	Node *head;     // head has 3 property: previous, next and data(values)
+	Node *cursor;   // cursor alse has 3 property: previous, next and values
+	int direction;	// -1 means forward direction, 1 means reverse direction, and 0 means do not move
+} IteratorIntRep;
