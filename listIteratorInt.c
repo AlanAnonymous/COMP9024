@@ -405,7 +405,7 @@ int deleteElm(IteratorInt it){
 			}
 			// 释放del指向的节点
 			free(it->del);
-			// 然后令del指向NULL，因为 deleteElm 并不是3个函数之一
+			// 然后令del指向NULL，因为 deleteElm 并不是4个函数之一
 			// 更深层的意思就是，让del不再指向原来的地址，而是令为NULL
 			it->del = NULL;
 		} else {
@@ -420,7 +420,7 @@ int deleteElm(IteratorInt it){
 			}
 			// 释放del指向的节点 
 			free(it->del);
-			// 然后令del指向NULL，因为 deleteElm 并不是3个函数之一
+			// 然后令del指向NULL，因为 deleteElm 并不是4个函数之一
 			// 更深层的意思就是，让del不再指向原来的地址，而是令为NULL 
 			it->del = NULL;
 		}
@@ -774,7 +774,7 @@ void sample_test_log1(){
 	  （满分10分，其中2分是格式备注风格分，8分是答案全部正确的得分）
 	   
 	  有兴趣的话还可以测试一下内存是否存在泄漏
-	  老师并没有讲过内存泄漏（只讲过free函数），也没有测内存是否泄漏
+	  老师并没有讲过内存泄漏（只讲过free函数），也没有讲过如何测内存是否泄漏
 	*/
 	
 }
